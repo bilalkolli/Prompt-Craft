@@ -18,5 +18,9 @@
     "uuid": "^9.0.1",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
+  },
+  "prisma": {
+    "schema": "server/database/schema.prisma",
+    "seed": "server/database/seed.js"
   }
 }
