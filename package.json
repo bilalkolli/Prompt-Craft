@@ -21,6 +21,11 @@
   },
   "prisma": {
     "schema": "server/database/schema.prisma",
-    "seed": "server/database/seed.js"
+    "seed": "server/database/seed.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <p>© 2024 - Prompt-Craft  <NuxtLink to="https://www.linkedin.com/in/bilal-kolli/" target="_blank" class="lien">CREATED BY ME </NuxtLink>!</p>
+        <p>© 2024 - Prompt-Craft, <NuxtLink to="https://www.linkedin.com/in/bilal-kolli/" target="_blank" class="lien"> CREATED BY ME </NuxtLink></p>
     </div>
 </template>
 
@@ -16,5 +16,10 @@ p {
 }
 .lien {
     color: blue
+}
+@media screen and (max-width: 352px){
+    p {
+        font-size: 14px;
+    }
 }
 </style>

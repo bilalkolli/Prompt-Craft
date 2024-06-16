@@ -60,7 +60,7 @@ svg {
         margin: 0
     }
 }
-@media screen and (max-width: 896px){
+@media screen and (max-width: 700px){
     .navbar { 
         padding: 0px; 
         display: block;
@@ -92,14 +92,11 @@ svg {
         display: inherit 
     }
 }
-.droite { 
+.droite,nav { 
     display: flex 
 }
 p { 
     font-weight: 500 
-}
-nav { 
-    display: flex 
 }
 a:hover,.login { 
     background-color: #BDD1FF 

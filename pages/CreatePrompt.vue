@@ -14,7 +14,7 @@
               <input v-model="description" type="text" name="description" placeholder="Enter your prompt">
 
               <label for="category"><p>Category</p></label>
-              <input v-model="category" type="text" name="category" placeholder="Enter your prompt category">
+              <input v-model="category" type="text" name="category" placeholder="Enter Business,Productivity or Marketing">
 
               <button type="submit"  @click.prevent="Post_Prompt">ADD A PROMPT </button>
           </form>
@@ -36,7 +36,12 @@ const description = ref(null)
 const category = ref(null)
 
 const Post_Prompt = async () => {
-  await formPrompt(name.value,title.value,description.value,category.value)
+    if (name.value && title.value && description.value && category.value) {
+      await formPrompt(name.value,title.value,description.value,category.value)
+    }
+    else {
+    alert('All fields must have been fields.')
+      }
 }
 </script>
 
