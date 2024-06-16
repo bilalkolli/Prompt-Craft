@@ -42,7 +42,7 @@ h2,h3 {
     opacity: 0.8;
     text-align: center;
     max-width: 850px;
-    font-size: 1.25rem;
+    font-size: 20px;
     line-height: 30px;
     animation: 0.3s myAnim
 }
@@ -81,15 +81,22 @@ strong {color:#395BC7}
     h1 {
         font-size: 3em;
     }
+    h2,h3 {
+        font-size: 18px;
+    }
 }
-@media screen and (max-width: 653px){
+@media screen and (max-width: 641px){
     .index {
         margin-bottom: 0px;
     }
-}
-@media screen and (max-width: 476px){
     h1 {
-        font-size: 2.6em;
+        font-size: 2.5em;
+        line-height: 45px;
+    }
+}
+@media screen and (max-width: 409px){
+    h1 {
+        font-size: 2.2em;
     }
 }
 </style>

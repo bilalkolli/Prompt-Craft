@@ -17,9 +17,12 @@ p {
 .lien {
     color: blue
 }
-@media screen and (max-width: 352px){
+@media screen and (max-width: 356px){
     p {
         font-size: 14px;
+    }
+    .footer {
+        padding: 0px;
     }
 }
 </style>
