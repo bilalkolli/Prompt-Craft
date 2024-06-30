@@ -1,7 +1,8 @@
 <template>
-    <div v-if="prompt" id="PromptComponent" class="custom">
+    <div v-if="prompt" id="PromptComponent">
       <NuxtLink :to="`/${prompt.id}`" >
         <p>{{ prompt.title }}</p>
+        <p class="author"><i>Created by @{{ prompt.author }}</i></p>
       </NuxtLink>
     </div>
     <div v-else>
@@ -10,36 +11,31 @@
   </template>
   
 <script setup>
-const props = defineProps({
+defineProps({
   prompt: {
     type: Object,
-    required: true
   }
 })
 </script>
   
 <style scoped>
-.custom {
+#PromptComponent {
   max-width: 290px;
-  height: 220px;
-  border-radius: 10px;
-  margin: 50px;
-  background-image: url("https://assets.promptbase.com/DALLE_IMAGES%2Fo7WhfyO2YCCRvD8UZVQi%2Fresized%2F1680885658302_500x500.webp?alt=media&token=1f0dca2e-f155-4f52-8f11-ff3198c685c3");
-  background-position: top;
+  border-radius: 5px;
+  align-items: center;
+  padding: 15px 10px;
+  border: black 1px solid;
+  margin: 50px
+}
+#PromptComponent:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.3)
 }
 a {
   text-decoration: none;
-  color: white;
+  color: black
 }
-p {
-  padding: 10px;
-  font-weight: 600;
-  background-color: black;
-  max-height: 88px;
-  opacity: 0.8;
-  border-radius: 10px;
-}
-#PromptComponent {
-  border-radius: 10px;
+.author {
+  margin-top: 5px;
+  opacity: 0.7
 }
 </style>

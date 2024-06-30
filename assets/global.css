@@ -36,25 +36,29 @@ a { text-decoration: none }
 }
 
 .CreatePrompt {
-   background-color: #0C111C;
-   width: 290px;
-   height: 220px;
-   border-radius: 10px;
+   min-width: 290px;
+   min-height: 120px;
+   border-radius: 7px;
+   border: 1px solid black;
    margin: 50px;
-   color: white;
+   color: black;
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: center
+}
+
+.CreatePrompt:hover {
+   box-shadow: 0 0 11px rgba(33,33,33,.3)
 }
 
 @media screen and (max-width: 1070px){
    .grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr)
    }
 }
 
-@media screen and (max-width: 788px){
+@media screen and (max-width: 785px){
    .grid {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(1, 1fr)
    }
 }
