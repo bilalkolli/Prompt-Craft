@@ -1,22 +1,18 @@
 <template>
     <navbar></navbar>
-    <div v-if="prompt">
     <div class="prompt">
-      <h1>{{  prompt.data?.title }}</h1>
+      <h1>{{  prompt.title }}</h1>
       <div class="prompt-display">
         <h2>Prompt details :</h2>
         <p>Model - ChatGPT</p>
-        <p>created by @{{  prompt.data?.author }}</p>
+        <p>created by @{{  prompt.author }}</p>
         <h3>Prompt :</h3>
-        <p class="description">{{ prompt.data?.description }}</p>
+        <p class="description">{{ prompt.description }}</p>
       </div>
     </div>
     <div class="commentaire">
     </div>
-    </div>
-    <div v-else>
-      <p>Chargement du prompt...</p>
-    </div>
+
     <Footer></Footer>
   </template>
   
@@ -26,11 +22,7 @@ import navbar from '~/layouts/Navbar.vue'
 import Footer from '~/layouts/Footer.vue'
 
 const route = useRoute()
-const prompt = ref([])
-
-onBeforeMount(async () => {
-    prompt.value = await useFetch(`/api/get-prompts-by-id/${route.params.id}`)
-})
+const {data:prompt} = await useFetch((`/api/get-prompts-by-id/${route.params.id}`))
 </script>
 
 <style scoped>
