@@ -7,7 +7,7 @@ export async function formPrompt(name:string,title:string,description:string,cat
         body: {name,title,description,category}
       })
       if (reponse) {
-        await useRouter().push('/')
+        await useRouter().push(`/${category}`)
       }
       }
       catch (e) {

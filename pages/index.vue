@@ -7,7 +7,7 @@
         <h1>AI Prompts for <strong>Business</strong>, <strong>Marketing</strong>, and <strong>Productivity</strong></h1>
         <h2>Prompt-Craft is an open-source platform that empowers creativity and productivity.</h2>
         <h3>Access 18 initial prompts and countless user-generated prompts for free !</h3>
-        <NuxtLink class="lienpricing" to="/BUSINESS"> INTERESTED ! </NuxtLink>
+        <NuxtLink class="lienpricing" to="/Business"> INTERESTED ! </NuxtLink>
     </div>
     <Footer></Footer>
 </template>

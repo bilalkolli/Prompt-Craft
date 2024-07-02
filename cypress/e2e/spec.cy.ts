@@ -20,7 +20,7 @@ it('succeeds with all fields filled', () => {
 
   cy.wait('@postPrompt')
 
-  cy.url().should('eq', 'http://localhost:3000/')
+  cy.url().should('eq', 'http://localhost:3000/Productivity')
 })
 
 it('displays an alert if a field is empty', () => {

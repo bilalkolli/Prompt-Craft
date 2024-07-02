@@ -9,7 +9,7 @@
             </svg>
         </div>
         <nav :class="{ 'hidden': hideActions }">
-            <NuxtLink v-for="biblioteque in biblioteques" :to="biblioteque.title" class="none">
+            <NuxtLink v-for="biblioteque in biblioteques" :to="`/${biblioteque.title}`" class="none">
                 <p>{{ biblioteque.title }}</p>
             </NuxtLink>
         </nav>
@@ -23,9 +23,9 @@ const hideActions = ref(true)
 const userActions = ref(null)
 
 const biblioteques = [
-    { id: 0, title: 'BUSINESS' },
-    { id: 1, title: 'PRODUCTIVITY' },
-    { id: 2, title: 'MARKETING' }
+    { id: 0, title: 'Business' },
+    { id: 1, title: 'Productivity' },
+    { id: 2, title: 'Marketing' }
 ]
 const toggleActionsVisibility = () => {
     hideActions.value = !hideActions.value
