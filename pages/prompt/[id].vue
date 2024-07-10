@@ -12,7 +12,6 @@
     </div>
     <div class="commentaire">
     </div>
-
     <Footer></Footer>
   </template>
   
@@ -26,7 +25,7 @@ const {data:prompt} = await useFetch((`/api/get-prompts-by-id/${route.params.id}
 </script>
 
 <style scoped>
-.prompt {
+.prompt,.commentaire {
   display: flex;
   justify-content: center;
   flex-direction: column;

@@ -5,7 +5,11 @@
       <NuxtLink to="CreatePrompt" class="CreatePrompt">
       <p>ADD A PROMPT !</p>
       </NuxtLink>
-      <div v-for="prompt in prompts" :key="prompt.id">
+      <div v-if="pending" v-for="i in 7">
+        <PromptsLoadingComponents>
+        </PromptsLoadingComponents>
+      </div>
+      <div v-else v-for="prompt in prompts" :key="prompt.id">
         <PromptsComponents :prompt="prompt">
         </PromptsComponents>
       </div>
@@ -19,9 +23,11 @@ import { useRoute } from 'vue-router'
 import navbar from '~/layouts/Navbar.vue'
 import Footer from '~/layouts/Footer.vue'
 import PromptsComponents from '~/components/PromptsComponents.vue'
+import PromptsLoadingComponents from '~/components/PromptsLoadingComponents.vue'
 
 const route = useRoute()
-const {data:prompts} = await useFetch((`/api/get-prompts-by-category/${route.params.category}`))
+const {pending,data:prompts} = await useFetch(`/api/get-prompts-by-category/${route.params.category}`,{lazy:true})
+const i = ref(0)
 </script>
 
 <style scoped>
