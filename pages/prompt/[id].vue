@@ -1,13 +1,16 @@
 <template>
     <navbar></navbar>
     <div class="prompt">
-      <h1>{{  prompt.title }}</h1>
+      <h1 v-if="pending" class="loadingtitle"></h1>
+      <h1 v-else>{{  prompt.title }}</h1>
       <div class="prompt-display">
         <h2>Prompt details :</h2>
         <p>Model - ChatGPT</p>
-        <p>created by @{{  prompt.author }}</p>
+        <p v-if="pending" class="loadingauthor"></p>
+        <p v-else>created by @{{  prompt.author }}</p>
         <h3>Prompt :</h3>
-        <p class="description">{{ prompt.description }}</p>
+        <p v-if="pending" class="loadingdescription"></p>
+        <p v-else class="description">{{ prompt.description }}</p>
       </div>
     </div>
     <div class="commentaire">
@@ -21,7 +24,7 @@ import navbar from '~/layouts/Navbar.vue'
 import Footer from '~/layouts/Footer.vue'
 
 const route = useRoute()
-const {data:prompt} = await useFetch((`/api/get-prompts-by-id/${route.params.id}`))
+const {pending,data:prompt} = await useFetch(`/api/get-prompts-by-id/${route.params.id}`,{lazy:true})
 </script>
 
 <style scoped>
@@ -29,32 +32,45 @@ const {data:prompt} = await useFetch((`/api/get-prompts-by-id/${route.params.id}
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: center
 }
 img {
-  border-radius: 10px;
+  border-radius: 10px
 }
 .description {
-  max-width: 600px;
+  max-width: 600px
 }
 h1 {
   max-width: 600px;
   margin: 50px 0px;
-  text-align: center;
+  text-align: center
 }
 h3,h2 {
-  font-size: 24px;
+  font-size: 24px
 }
 p {
-  font-size: 18px;
+  font-size: 18px
 }
 h2,p,h3 {
-  margin-bottom: 10px;
+  margin-bottom: 10px
 }
 .prompt-display {
   border: 2.5px solid black;
   padding: 30px;
   margin: 20px;
-  border-radius: 10px;
+  border-radius: 10px
+}
+.loadingtitle,.loadingauthor,.loadingdescription {
+  background-color: rgba(0, 0, 0, 0.11);
+  animation: animation-c7515d 1.5s ease-in-out 0.5s infinite;
+  width: 500px;
+  height: 30px;
+  border-radius: 10px
+}
+.loadingtitle {
+  height: 70px
+}
+.loadingdescription {
+  height: 300px
 }
 </style>

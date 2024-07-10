@@ -63,6 +63,18 @@ a { text-decoration: none }
    box-shadow: 0 0 11px rgba(33,33,33,.3)
 }
 
+@keyframes animation-c7515d {
+   0% {
+   opacity: 1
+   }
+   50% {
+   opacity: 0.5
+   }
+   100% {
+   opacity: 1
+   }
+}
+
 @media screen and (max-width: 1070px){
    .grid {
       grid-template-columns: repeat(2, 1fr)
