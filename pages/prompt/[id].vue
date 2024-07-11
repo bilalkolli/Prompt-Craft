@@ -12,6 +12,7 @@
         <p v-if="pending" class="loadingdescription"></p>
         <p v-else class="description">{{ prompt.description }}</p>
       </div>
+      <button @click="Copyprompt">{{ button_phrase }}</button>
     </div>
     <div class="commentaire">
     </div>
@@ -23,8 +24,14 @@ import { useRoute } from 'vue-router'
 import navbar from '~/layouts/Navbar.vue'
 import Footer from '~/layouts/Footer.vue'
 
+const button_phrase = ref('Copy this prompt !')
 const route = useRoute()
 const {pending,data:prompt} = await useFetch(`/api/get-prompts-by-id/${route.params.id}`,{lazy:true})
+
+const Copyprompt = () => {
+  navigator.clipboard.writeText(prompt.value.description)
+  button_phrase.value = 'Paste it in CHATGPT !'
+}
 </script>
 
 <style scoped>
@@ -72,5 +79,16 @@ h2,p,h3 {
 }
 .loadingdescription {
   height: 300px
+}
+button {
+  padding: 7px 25px;
+    margin: 30px 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1E1F24;
+    background-color:  #BDD1FF;
+    animation: 0.2s myAnim;
+    cursor: pointer;
 }
 </style>
