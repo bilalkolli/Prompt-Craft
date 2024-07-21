@@ -1,7 +1,7 @@
 <template>
   <div id="PromptComponent">
-    <NuxtLink :to="`/prompt/${prompt.id}`" >
-      <p>{{ prompt.title }}</p>
+    <NuxtLink :to="`/prompt/${prompt.id}`">
+      <p>{{ prompt.title.length > 32 ? prompt.title.substring(0, 32) : prompt.title }}...</p>
       <p class="author">
         <i>Created by @{{ prompt.author }}</i>
       </p>
@@ -11,19 +11,20 @@
 
 <script setup>
 defineProps({
-prompt: {
-  type: Object
-}
+  prompt: {
+    type: Object,
+    required: true
+  }
 })
 </script>
 
 <style scoped>
 a {
-text-decoration: none;
-color: black
+  text-decoration: none;
+  color: black;
 }
 .author {
-margin-top: 5px;
-opacity: 0.7
+  margin-top: 5px;
+  opacity: 0.7;
 }
 </style>

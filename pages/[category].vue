@@ -5,7 +5,7 @@
       <NuxtLink to="CreatePrompt" class="CreatePrompt">
       <p>ADD A PROMPT !</p>
       </NuxtLink>
-      <div v-if="pending" v-for="i in 7">
+      <div v-if="pending" v-for="i in 8">
         <PromptsLoadingComponents>
         </PromptsLoadingComponents>
       </div>

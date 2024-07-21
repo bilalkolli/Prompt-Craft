@@ -15,11 +15,11 @@
     background-color: rgba(0, 0, 0, 0.11);
     animation: animation-c7515d 1.5s ease-in-out 0.5s infinite;
     width: 250px;
-    height: 30px
+    border-radius: 5px;
+    height: 22px
 }
 .loadingauthor{
     margin-top: 5px;
-    width: 100px;
-    height: 15px
+    width: 150px;
 }
 </style>

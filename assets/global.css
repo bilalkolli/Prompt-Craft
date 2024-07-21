@@ -37,7 +37,7 @@ a { text-decoration: none }
 
 .CreatePrompt {
    min-width: 290px;
-   min-height: 120px;
+   min-height: 85px;
    border-radius: 7px;
    border: 1px solid black;
    margin: 50px;
